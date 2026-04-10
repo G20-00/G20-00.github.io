@@ -41,7 +41,7 @@ if (hasProjects) {
 ---
 
 <Layout title={`${profileData.name} - ${profileData.role}`} description={profileData.bio_short} lang={currentLang}>
-<div class="mx-auto flex w-full max-w-[1180px] flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-1">
+<div class="mx-auto flex w-full max-w-[1180px] flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-1 h-[calc(100vh-80px)]">
   
   <div class="order-2 flex w-full items-center justify-center lg:order-1 lg:w-[420px] lg:shrink-0">
     <ProjectCarousel projects={projectsData} lang={currentLang} />

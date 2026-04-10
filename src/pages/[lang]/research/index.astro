@@ -37,7 +37,7 @@ const articles = researchObj[currentLang] || [];
 ---
 
 <Layout title={`${t.research.title}`} description={t.research.subtitle} lang={currentLang}>
-  <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
+  <div class="h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20">
     <Section id="research" title={t.research.title} subtitle={t.research.subtitle}>
     <div>
       {articles.map((article) => (

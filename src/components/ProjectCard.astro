@@ -16,14 +16,14 @@ const { title, description, image, tech, year, url } = Astro.props;
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
       <img src={image} alt={title} class="w-full sm:w-32 md:w-40 h-40 object-cover rounded bg-gray-100 dark:bg-gray-800 flex-shrink-0" />
       <div class="flex-1 min-w-0">
-        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3">{description}</p>
+        <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-900 dark:text-white mb-2 transition-all">{title}</h3>
+        <p class="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-3 transition-all">{description}</p>
         <div class="flex flex-wrap gap-2 mb-3">
           {tech.map((t) => (
-            <span class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">{t}</span>
+            <span class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs lg:text-sm xl:text-base px-2 py-1 rounded transition-all">{t}</span>
           ))}
         </div>
-        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">{year}</p>
+        <p class="text-xs sm:text-sm lg:text-base xl:text-lg text-gray-500 dark:text-gray-500 transition-all">{year}</p>
       </div>
     </div>
   </a>
@@ -32,14 +32,14 @@ const { title, description, image, tech, year, url } = Astro.props;
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
       <img src={image} alt={title} class="w-full sm:w-32 md:w-40 h-40 object-cover rounded bg-gray-100 dark:bg-gray-800 flex-shrink-0" />
       <div class="flex-1 min-w-0">
-        <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
-        <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3">{description}</p>
+        <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-900 dark:text-white mb-2 transition-all">{title}</h3>
+        <p class="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 dark:text-gray-400 mb-3 transition-all">{description}</p>
         <div class="flex flex-wrap gap-2 mb-3">
           {tech.map((t) => (
-            <span class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">{t}</span>
+            <span class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs lg:text-sm xl:text-base px-2 py-1 rounded transition-all">{t}</span>
           ))}
         </div>
-        <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">{year}</p>
+        <p class="text-xs sm:text-sm lg:text-base xl:text-lg text-gray-500 dark:text-gray-500 transition-all">{year}</p>
       </div>
     </div>
   </div>

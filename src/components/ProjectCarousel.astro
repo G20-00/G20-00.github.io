@@ -102,9 +102,40 @@ const t = translations[lang];
     justify-content: center;
   }
 
+  @media (min-width: 1024px) {
+    .project-slider {
+      width: 100%;
+      padding: 0.5rem 0 0.75rem;
+    }
+
+    .project-slider__inner {
+      width: 100%;
+      min-width: 280px;
+    }
+
+    .project-slider__viewport {
+      border-radius: 1.5rem;
+    }
+
+    .project-slider__card {
+      aspect-ratio: 1 / 1;
+      border-radius: 1.5rem;
+      box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.16),
+        0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .project-slider__card {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
   .project-slider__inner {
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
+    min-width: 250px;
   }
 
   .project-slider__viewport {

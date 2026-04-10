@@ -9,11 +9,10 @@ interface Props {
 const { id, title, subtitle, className = '' } = Astro.props;
 ---
 
-<section id={id} class={`pt-4 sm:pt-6 pb-8 px-4 sm:px-6 lg:px-8 w-full ${className}`}>
-  <div class="max-w-2xl mx-auto w-full">
-    <h1 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">{title}</h1>
-    {subtitle && <p class="text-xs sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-12">{subtitle}</p>}
+<section id={id} class={`pt-4 sm:pt-6 pb-8 px-4 sm:px-6 w-full lg:px-0 ${className}`}>
+  <div class="flex-1 w-full">
+    <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4 transition-all">{title}</h1>
+    {subtitle && <p class="text-xs sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-12 transition-all">{subtitle}</p>}
     <slot />
   </div>
-</section>
 </section>

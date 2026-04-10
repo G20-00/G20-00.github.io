@@ -38,7 +38,7 @@ const experienceData = experience[currentLang];
 ---
 
 <Layout title={`${t.about.title} - ${profileData.name}`} description={t.about.bio} lang={currentLang}>
-  <div class="h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20">
+  <div class="mx-auto flex w-full max-w-[2000px] flex-col lg:flex-row lg:px-32 2xl:px-40 h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20">
     <Section id="about" title={t.about.title}>
     <div class="max-w-none text-gray-700 dark:text-gray-400 mb-6 sm:mb-12">
       <p class="mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">{t.about.bio}</p>

@@ -20,16 +20,19 @@ const { title = 'Portfolio', description = 'Alex Rivera - Full Stack Developer',
     <title>{title}</title>
     <script is:inline>
       // Apply theme BEFORE page renders - pure client-side
+      // Default to dark theme
       (function() {
         try {
           const theme = localStorage.getItem('theme');
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else {
+          if (theme === 'light') {
             document.documentElement.classList.remove('dark');
+          } else {
+            // Default to dark: 'dark', null, or any other value
+            document.documentElement.classList.add('dark');
           }
         } catch (e) {
-          // localStorage not available
+          // localStorage not available - default to dark
+          document.documentElement.classList.add('dark');
         }
       })();
       

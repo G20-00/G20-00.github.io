@@ -7,19 +7,23 @@ interface Props {
 const { currentPage, currentLang } = Astro.props;
 
 const translations = {
-  es: { 
-    home: 'Inicio', 
-    about: 'Sobre mí', 
-    projects: 'Proyectos', 
-    research: 'Investigación', 
-    contact: 'Contacto'
+  es: {
+    home: 'Inicio',
+    about: 'Sobre mí',
+    projects: 'Proyectos',
+    research: 'Investigación',
+    contact: 'Contacto',
+    more: 'Más',
+    theme: 'Tema',
   },
-  en: { 
-    home: 'Home', 
-    about: 'About', 
-    projects: 'Projects', 
-    research: 'Research', 
-    contact: 'Contact'
+  en: {
+    home: 'Home',
+    about: 'About',
+    projects: 'Projects',
+    research: 'Research',
+    contact: 'Contact',
+    more: 'More',
+    theme: 'Theme',
   },
 };
 
@@ -27,109 +31,404 @@ const t = translations[currentLang];
 
 const isActive = (page: string) => currentPage === page;
 
-// Define page structure with required JSON files
 const pageDefinitions = [
-  { id: 'home', pathSegment: '', icon: '🏠', requiredFiles: ['profile.json'] },
-  { id: 'about', pathSegment: 'about/', icon: '👤', requiredFiles: ['profile.json', 'experience.json'] },
-  { id: 'projects', pathSegment: 'projects/', icon: '📁', requiredFiles: ['projects.json'] },
-  { id: 'research', pathSegment: 'research/', icon: '📚', requiredFiles: ['research.json'] },
-  { id: 'contact', pathSegment: 'contact/', icon: '✉️', requiredFiles: ['contact.json'] },
+  { id: 'home', pathSegment: '', requiredFiles: ['profile.json'] },
+  { id: 'about', pathSegment: 'about/', requiredFiles: ['profile.json', 'experience.json'] },
+  { id: 'projects', pathSegment: 'projects/', requiredFiles: ['projects.json'] },
+  { id: 'research', pathSegment: 'research/', requiredFiles: ['research.json'] },
+  { id: 'contact', pathSegment: 'contact/', requiredFiles: ['contact.json'] },
 ];
 
-// Get all available data files
+/* English comment: Detect available JSON files */
 const dataFiles = import.meta.glob('/src/data/*.json', { eager: false });
-const availableFiles = Object.keys(dataFiles).map(path => {
-  const filename = path.split('/').pop() || '';
-  return filename;
-});
 
-// Filter pages to show only those with all required files present
-const enabledPages = pageDefinitions.filter(page => 
-  page.requiredFiles.every(file => availableFiles.includes(file))
+const availableFiles = Object.keys(dataFiles).map(
+  (path) => path.split('/').pop() || ''
+);
+
+/* English comment: Enable only valid pages */
+const enabledPages = pageDefinitions.filter((page) =>
+  page.requiredFiles.every((file) => availableFiles.includes(file))
+);
+
+/* English comment: Configure primary and secondary mobile items */
+const mobilePrimaryPages = enabledPages.filter((page) =>
+  ['home', 'projects', 'contact'].includes(page.id)
+);
+
+const mobileSecondaryPages = enabledPages.filter((page) =>
+  !['home', 'projects', 'contact'].includes(page.id)
 );
 ---
 
-<nav class="fixed bottom-0 left-0 right-0 w-full bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-[9999]">
-  <div class="max-w-full px-4 py-3">
-    <div class="flex justify-around items-center gap-2">
-      {enabledPages.map((page) => (
-        <a
-          href={`/${currentLang}/${page.pathSegment}`}
-          class={`flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded transition-colors flex flex-col items-center gap-1 ${
+<!-- English comment: Desktop navbar -->
+<nav
+  class="
+    hidden sm:block
+    fixed bottom-4 left-1/2 -translate-x-1/2
+    w-[95%] max-w-3xl
+    rounded-2xl
+    backdrop-blur-xl
+    border
+    shadow-[0_10px_30px_rgba(0,0,0,0.15)]
+    z-[9999]
+    bg-white/60
+    border-white/40
+    dark:bg-gray-900/70
+    dark:border-gray-700/50
+  "
+>
+  <div class="flex items-center justify-between gap-1 px-2 py-2">
+    {enabledPages.map((page) => (
+      <a
+        href={`/${currentLang}/${page.pathSegment}`}
+        aria-current={isActive(page.id) ? 'page' : undefined}
+        class={`
+          group relative
+          flex flex-1 flex-col items-center justify-center
+          rounded-xl
+          px-2 py-2
+          text-xs sm:text-sm
+          font-medium
+          transition-all duration-200
+          ${
             isActive(page.id)
               ? 'text-gray-900 dark:text-white'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
-          }`}
+              : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+          }
+        `}
+      >
+        <span class="text-base">
+          {t[page.id as keyof typeof t]}
+        </span>
+
+        <span
+          class={`
+            absolute bottom-0 left-3 right-3
+            h-[2px] rounded-full
+            transition-opacity duration-200
+            ${
+              isActive(page.id)
+                ? 'opacity-100 bg-gray-900 dark:bg-white'
+                : 'opacity-0 group-hover:opacity-40 bg-gray-700 dark:bg-gray-300'
+            }
+          `}
+        />
+      </a>
+    ))}
+
+    <button
+      id="langToggleDesktop"
+      type="button"
+      class="
+        flex flex-1 items-center justify-center
+        h-9 px-2.5
+        rounded-xl
+        text-xs sm:text-sm
+        font-semibold
+        transition-all duration-200
+        border
+        bg-white/55
+        border-white/50
+        text-gray-800
+        shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_6px_18px_rgba(0,0,0,0.08)]
+        hover:bg-white/70
+        dark:bg-[#151b31]/90
+        dark:border-white/10
+        dark:text-white/90
+        dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_8px_20px_rgba(0,0,0,0.18)]
+        dark:hover:bg-[#1a213b]
+      "
+      title={currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+      aria-label={currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+    >
+      <span class="flex items-center gap-1.5 whitespace-nowrap">
+        <span>{currentLang.toUpperCase()}</span>
+        <svg
+          class="h-3 w-3 opacity-70"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
         >
-          <span class="text-lg">{page.icon}</span>
-          <span class="hidden sm:inline">{t[page.id as keyof typeof t]}</span>
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </span>
+    </button>
+
+    <button
+      id="themeToggleDesktop"
+      type="button"
+      class="
+        flex flex-1 items-center justify-center
+        h-9 px-2.5
+        rounded-xl
+        border
+        bg-white/55
+        border-white/50
+        text-gray-800
+        hover:bg-white/70
+        dark:bg-[#151b31]/90
+        dark:border-white/10
+        dark:text-white/90
+        dark:hover:bg-[#1a213b]
+        transition-all duration-200
+        shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_6px_18px_rgba(0,0,0,0.08)]
+        dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_8px_20px_rgba(0,0,0,0.18)]
+      "
+      title="Cambiar tema"
+      aria-label="Cambiar tema"
+    >
+      <span id="themeIconDesktop" class="text-base leading-none">🌙</span>
+    </button>
+  </div>
+</nav>
+
+<!-- English comment: Mobile navbar with the same professional text-first style -->
+<nav
+  class="
+    sm:hidden
+    fixed left-2 right-2 bottom-16
+    z-[9999]
+    rounded-2xl
+    backdrop-blur-xl
+    border
+    shadow-[0_10px_30px_rgba(0,0,0,0.15)]
+    bg-white/70
+    border-white/40
+    dark:bg-gray-900/80
+    dark:border-gray-700/50
+  "
+>
+  <div class="grid grid-cols-4 items-center gap-1 px-2 py-2">
+    {mobilePrimaryPages.map((page) => (
+      <a
+        href={`/${currentLang}/${page.pathSegment}`}
+        aria-current={isActive(page.id) ? 'page' : undefined}
+        class={`
+          group relative
+          flex min-w-0 items-center justify-center
+          rounded-xl
+          px-2 py-2
+          text-xs font-medium
+          transition-all duration-200
+          ${
+            isActive(page.id)
+              ? 'text-gray-900 dark:text-white'
+              : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+          }
+        `}
+      >
+        <span class="truncate whitespace-nowrap">
+          {t[page.id as keyof typeof t]}
+        </span>
+
+        <span
+          class={`
+            absolute bottom-0 left-2 right-2
+            h-[2px] rounded-full
+            transition-opacity duration-200
+            ${
+              isActive(page.id)
+                ? 'opacity-100 bg-gray-900 dark:bg-white'
+                : 'opacity-0 group-hover:opacity-40 bg-gray-700 dark:bg-gray-300'
+            }
+          `}
+        />
+      </a>
+    ))}
+
+    <button
+      id="mobileMoreToggle"
+      type="button"
+      class="
+        group relative
+        flex min-w-0 items-center justify-center
+        rounded-xl
+        px-2 py-2
+        text-xs font-medium
+        text-gray-500 dark:text-gray-400
+        hover:text-gray-800 dark:hover:text-gray-200
+        transition-all duration-200
+      "
+      aria-label={t.more}
+      title={t.more}
+    >
+      <span class="truncate whitespace-nowrap">{t.more}</span>
+    </button>
+  </div>
+
+  <div
+    id="mobileMorePanel"
+    class="hidden border-t border-black/5 px-2 pb-2 pt-2 dark:border-white/10"
+  >
+    <div class="grid grid-cols-2 gap-2">
+      {mobileSecondaryPages.map((page) => (
+        <a
+          href={`/${currentLang}/${page.pathSegment}`}
+          aria-current={isActive(page.id) ? 'page' : undefined}
+          class={`
+            group relative
+            flex items-center justify-center rounded-xl px-3 py-2
+            text-sm font-medium transition-all duration-200
+            ${
+              isActive(page.id)
+                ? 'bg-white/60 text-gray-900 dark:bg-white/10 dark:text-white'
+                : 'bg-white/40 text-gray-700 dark:bg-white/5 dark:text-gray-200'
+            }
+          `}
+        >
+          <span class="whitespace-nowrap">
+            {t[page.id as keyof typeof t]}
+          </span>
         </a>
       ))}
+
       <button
-        id="langToggle"
-        class="flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded flex flex-col items-center gap-1 text-gray-500 hover:text-gray-700 cursor-pointer dark:text-gray-400 dark:hover:text-gray-200"
+        id="langToggleMobile"
+        type="button"
+        class="
+          flex items-center justify-center gap-2
+          rounded-xl px-3 py-2 text-sm font-semibold
+          transition-all duration-200 border
+          bg-white/55 border-white/50 text-gray-800
+          shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_6px_18px_rgba(0,0,0,0.08)]
+          hover:bg-white/70
+          dark:bg-[#151b31]/90 dark:border-white/10 dark:text-white/90
+          dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_8px_20px_rgba(0,0,0,0.18)]
+          dark:hover:bg-[#1a213b]
+        "
         title={currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+        aria-label={currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
       >
-        <span class="text-lg">🌐</span>
-        <span class="hidden sm:inline">
-          {currentLang === 'es' ? 'EN' : 'ES'}
-        </span>
+        <span>{currentLang.toUpperCase()}</span>
+        <svg
+          class="h-3 w-3 opacity-70"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clip-rule="evenodd"
+          />
+        </svg>
       </button>
+
       <button
-        id="themeToggle"
-        class="flex-1 py-2 px-2 text-center text-xs sm:text-sm rounded flex flex-col items-center gap-1 text-gray-500 hover:text-gray-700 cursor-pointer dark:text-gray-400 dark:hover:text-gray-200"
+        id="themeToggleMobile"
+        type="button"
+        class="
+          flex items-center justify-center gap-2
+          rounded-xl px-3 py-2 text-sm font-semibold
+          transition-all duration-200 border
+          bg-white/55 border-white/50 text-gray-800
+          shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_6px_18px_rgba(0,0,0,0.08)]
+          hover:bg-white/70
+          dark:bg-[#151b31]/90 dark:border-white/10 dark:text-white/90
+          dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_8px_20px_rgba(0,0,0,0.18)]
+          dark:hover:bg-[#1a213b]
+        "
         title="Cambiar tema"
+        aria-label="Cambiar tema"
       >
-        <span class="text-lg">☀️</span>
-        <span class="hidden sm:inline">🌙</span>
+        <span id="themeIconMobile" class="text-base leading-none">🌙</span>
+        <span>{t.theme}</span>
       </button>
     </div>
   </div>
 </nav>
 
 <script is:inline>
-  // Theme toggle - force visual update
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-      const html = document.documentElement;
-      const isDark = html.classList.contains('dark');
-      
-      console.log('Current theme before toggle:', isDark ? 'dark' : 'light');
-      
-      // Toggle the class
-      if (isDark) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-        console.log('Switched to light theme');
-      } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-        console.log('Switched to dark theme');
-      }
-      
-      // Force repaint
-      void html.offsetHeight;
-      
-      console.log('Theme after toggle:', html.classList.contains('dark') ? 'dark' : 'light');
-    });
+  /* English comment: Update all theme icons */
+  function updateThemeIcons() {
+    const isDark = document.documentElement.classList.contains('dark');
+
+    const desktopIcon = document.getElementById('themeIconDesktop');
+    const mobileIcon = document.getElementById('themeIconMobile');
+
+    if (desktopIcon) {
+      desktopIcon.textContent = isDark ? '🌙' : '☀️';
+    }
+
+    if (mobileIcon) {
+      mobileIcon.textContent = isDark ? '🌙' : '☀️';
+    }
   }
 
-  // Language toggle - save preference and trigger translation
-  const langToggle = document.getElementById('langToggle');
-  if (langToggle) {
-    langToggle.addEventListener('click', function() {
-      // Get current language preference from localStorage
-      const currentLang = localStorage.getItem('lang') || 'es';
-      const newLang = currentLang === 'es' ? 'en' : 'es';
-      
-      // Save preference
-      localStorage.setItem('lang', newLang);
-      
-      // Get current path and replace language
-      const currentPath = window.location.pathname;
-      const newPath = currentPath.replace(/^\/(es|en)/, `/${newLang}`);
-      window.location.href = newPath;
-    });
+  /* English comment: Toggle theme */
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+
+    if (isDark) {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+
+    updateThemeIcons();
   }
+
+  /* English comment: Toggle language */
+  function toggleLanguage() {
+    const savedLang = localStorage.getItem('lang') || 'es';
+    const newLang = savedLang === 'es' ? 'en' : 'es';
+
+    localStorage.setItem('lang', newLang);
+
+    const currentPath = window.location.pathname;
+    const newPath = currentPath.replace(/^\/(es|en)/, `/${newLang}`);
+
+    window.location.href = newPath;
+  }
+
+  /* English comment: Bind desktop controls */
+  document
+    .getElementById('themeToggleDesktop')
+    ?.addEventListener('click', toggleTheme);
+
+  document
+    .getElementById('langToggleDesktop')
+    ?.addEventListener('click', toggleLanguage);
+
+  /* English comment: Bind mobile controls */
+  document
+    .getElementById('themeToggleMobile')
+    ?.addEventListener('click', toggleTheme);
+
+  document
+    .getElementById('langToggleMobile')
+    ?.addEventListener('click', toggleLanguage);
+
+  /* English comment: Bind mobile expandable panel */
+  document
+    .getElementById('mobileMoreToggle')
+    ?.addEventListener('click', () => {
+      document
+        .getElementById('mobileMorePanel')
+        ?.classList.toggle('hidden');
+    });
+
+  /* English comment: Initialize theme icons */
+  updateThemeIcons();
 </script>
+
+<style>
+  /* English comment: Reserve bottom space for the fixed navbars */
+  :global(main) {
+    padding-bottom: 12rem;
+  }
+
+  @media (min-width: 640px) {
+    :global(main) {
+      padding-bottom: 7rem;
+    }
+  }
+</style>

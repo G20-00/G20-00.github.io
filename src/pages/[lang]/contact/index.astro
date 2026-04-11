@@ -36,13 +36,13 @@ const contact = contactObj[currentLang] || { email: '', phone: '', social: {} };
 ---
 
 <Layout title={`${t.contact.title}`} description={t.contact.intro} lang={currentLang}>
-  <div class="mx-auto flex w-full max-w-[2000px] flex-col lg:flex-row lg:px-32 2xl:px-40 h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20">
+  <div class="mx-auto flex w-full flex-col lg:flex-row min-h-[calc(100vh-80px)] overflow-y-auto [&>*:last-child]:pb-20 px-4 sm:px-6 lg:px-24 xl:px-32 2xl:px-40">
     <Section id="contact" title={t.contact.title}>
     <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">{t.contact.intro}</p>
     
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 w-full">
       <!-- Contact Information -->
-      <div>
+      <div class="flex flex-col justify-start">
         <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-6">{currentLang === 'es' ? 'Información de contacto' : 'Contact Information'}</h3>
         <div class="space-y-4 sm:space-y-6">
           <div class="flex items-start gap-4">
@@ -85,7 +85,7 @@ const contact = contactObj[currentLang] || { email: '', phone: '', social: {} };
       </div>
 
       <!-- Contact Form -->
-      <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+      <div class="bg-gray-50 dark:bg-gray-800 p-6 lg:p-8 rounded-lg h-fit">
         <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4">{currentLang === 'es' ? 'Envíame un mensaje' : 'Send me a message'}</h3>
         <form class="space-y-4">
           <div>

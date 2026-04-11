@@ -2,16 +2,16 @@
   "es": {
     "name": "Gianni A.",
     "role": "Desarrollador Full Stack",
-    "email": "hello@alexrivera.dev",
-    "location": "San Francisco, CA",
+    "email": "sb5021087@gmail.com",
+    "location": "Cali, Colombia",
     "bio_short": "Ingeniero de Sistemas con pasión por el desarrollo full stack y DevOps. Con experiencia en Azure, CI/CD y automatización de procesos. Diseño soluciones eficientes, seguras y escalables.",
     "avatar": "/images/avatar.png"
   },
   "en": {
     "name": "Gianni A.",
     "role": "Full Stack Developer",
-    "email": "hello@alexrivera.dev",
-    "location": "San Francisco, CA",
+    "email": "sb5021087@gmail.com",
+    "location": "Cali, Colombia",
     "bio_short": "Systems Engineer focused on full stack development and DevOps. Experienced in Azure, CI/CD and process automation. Building efficient, secure and scalable solutions.",
     "avatar": "/images/avatar.png"
   }

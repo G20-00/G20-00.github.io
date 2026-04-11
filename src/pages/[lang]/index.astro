@@ -41,13 +41,13 @@ if (hasProjects) {
 ---
 
 <Layout title={`${profileData.name} - ${profileData.role}`} description={profileData.bio_short} lang={currentLang}>
-<div class="mx-auto flex w-full max-w-[2000px] flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-8 lg:px-32 2xl:gap-12 2xl:px-40 h-[calc(100vh-80px)]">
+<div class="mx-auto flex w-full flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-8 min-h-[calc(100vh-80px)] px-4 sm:px-6 lg:px-24 xl:px-32 2xl:px-40 lg:pb-6 xl:pb-8 2xl:pb-12">
   
-  <div class="order-2 flex w-full items-center justify-center lg:order-1 lg:max-w-[25%] lg:flex-1 lg:min-w-[250px]">
+  <div class="order-2 flex w-full items-center justify-center lg:order-1 lg:max-w-[20%] lg:flex-1 lg:min-w-[250px]">
     <ProjectCarousel projects={projectsData} lang={currentLang} />
   </div>
 
-  <div class="order-1 flex w-full flex-col items-center justify-center px-4 py-8 lg:order-2 lg:flex-1 lg:py-0 lg:px-0">
+  <div class="order-1 flex w-full flex-col items-center justify-center px-4 py-8 lg:order-2 lg:flex-1 lg:py-0 lg:px-0 lg:mb-6 xl:mb-8 2xl:mb-12">
     <div class="w-full">
       <Section id="home" title="">
         <div class="mb-8 mt-16 flex items-center justify-center">

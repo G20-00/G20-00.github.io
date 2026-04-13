@@ -1,0 +1,44 @@
+---
+import socialLinksData from '../data/social-links.json';
+
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+
+// Map social links to display names and icons
+const socialLinks = [
+  { key: 'github', label: 'GitHub', icon: '󰊤' },
+  { key: 'linkedin', label: 'LinkedIn', icon: '󰌻' },
+];
+---
+
+<footer class="w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-12 sm:mt-16 lg:mt-20">
+  <div class="mx-auto px-4 sm:px-6 lg:px-24 xl:px-32 2xl:px-40 py-8 sm:py-12">
+    <!-- Social Links -->
+    <div class="flex justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+      {socialLinks.map((link) => {
+        const url = socialLinksData[link.key as keyof typeof socialLinksData];
+        if (!url) return null;
+        
+        return (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={link.label}
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            <span class="text-lg">{link.icon}</span>
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+      <p>{lang === 'en' ? `© ${new Date().getFullYear()} Alex Rivera. All rights reserved.` : `© ${new Date().getFullYear()} Alex Rivera. Todos los derechos reservados.`}</p>
+    </div>
+  </div>
+</footer>

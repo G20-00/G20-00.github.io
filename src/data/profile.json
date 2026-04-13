@@ -1,10 +1,11 @@
+
 {
   "es": {
     "name": "Gianni A.",
     "role": "Desarrollador Full Stack",
     "email": "sb5021087@gmail.com",
     "location": "Cali, Colombia",
-    "bio_short": "Ingeniero de Sistemas con pasión por el desarrollo full stack y DevOps. Con experiencia en Azure, CI/CD y automatización de procesos. Diseño soluciones eficientes, seguras y escalables.",
+    "bio_short": "Ingeniero de Sistemas con experiencia en desarrollo full stack, automatización de procesos y modernización de sistemas. Trabajo con tecnologías como Next.js, JavaScript, TypeScript, Java y Python, además de bases de datos relacionales y no relacionales. También tengo experiencia en CI/CD y despliegue de soluciones escalables en Azure.",
     "avatar": "/images/avatar.png"
   },
   "en": {
@@ -12,7 +13,8 @@
     "role": "Full Stack Developer",
     "email": "sb5021087@gmail.com",
     "location": "Cali, Colombia",
-    "bio_short": "Systems Engineer focused on full stack development and DevOps. Experienced in Azure, CI/CD and process automation. Building efficient, secure and scalable solutions.",
+    "bio_short": "Systems Engineer with experience in full stack development, process automation, and system modernization. I work with technologies such as Next.js, JavaScript, TypeScript, Java, and Python, as well as relational and non-relational databases. I also have experience with CI/CD and deploying scalable solutions on Azure.",
     "avatar": "/images/avatar.png"
   }
+
 }

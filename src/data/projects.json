@@ -5,7 +5,7 @@
       "title": "Observatorios",
       "description": "Plataforma multiobservatorio de datos abiertos para visualizar y analizar producción, consumo, precios, comercio y otros indicadores agrícolas mediante gráficos, mapas y dashboards interactivos",
       "image": "/images/Observatorios.png",
-      "tech": ["Next.js", "TypeScript", "Node.js", "Mysql","PHP","Python"],
+      "tech": ["Next.js", "TypeScript", "Node.js", "MySQL", "PHP", "Python"],
       "year": 2026,
       "featured": true,
       "url": "https://cropobservatoriesalliance.org"
@@ -15,74 +15,72 @@
       "title": "Rasptool",
       "description": "Plataforma web interactiva de análisis agroclimático para visualizar la aptitud futura de cultivos y apoyar decisiones de planificación agrícola y adaptación al cambio climático",
       "image": "/images/Rasptool.png",
-      "tech": ["Next.js", "TypeScript", "Node.js","Mysql","Python","FastAPI"],
+      "tech": ["Next.js", "TypeScript", "Node.js", "MySQL", "Python", "FastAPI"],
       "year": 2025,
       "featured": true,
       "url": "https://rasptool.com/interactive-tool"
-    
-      },
+    },
     {
       "id": "3",
       "title": "Colombia agroalimentaria sostenible",
       "description": "Plataforma de monitoreo, evaluación y visualización de indicadores en tiempo real para proyectos agroalimentarios sostenibles",
       "image": "/images/Melia.png",
-      "tech": ["Next.js", "TypeScript", "Node.js","Mysql","Python","Aws"],
+      "tech": ["Next.js", "TypeScript", "Node.js", "MySQL", "Python", "AWS"],
       "year": 2024,
       "featured": true,
       "url": "https://melia.agroalimentariasostenible.co"
-    
     },
     {
       "id": "4",
-      "title": "Calculadora de Carbono",
-      "description": "Herramienta interactiva para medir emisiones de carbono",
-      "image": "/images/project-4.svg",
-      "tech": ["React", "Python", "FastAPI"],
-      "year": 2023,
+      "title": "HackathonIA-Coo-front",
+      "description": "Aplicación web moderna de e-commerce desarrollada para el Hackathon de Coomeva, con autenticación, carrito de compras, procesamiento de pagos y gestión de órdenes",
+      "image": "/images/HackatonIa.png",
+      "tech": ["Next.js 16.1.6", "React 19.2.3", "TypeScript 5.0", "Tailwind CSS 4.0"],
+      "year": 2025,
       "featured": true,
-      "url": "https://example.com/analytics"
+      "url": "https://github.com/jodavelo/HackathonIA-Coo-front"
     }
   ],
   "en": [
     {
       "id": "1",
-      "title": "Analytics Dashboard",
-      "description": "Real-time data visualization platform for SaaS analytics",
-      "image": "/images/project-1.svg",
-      "tech": ["React", "TypeScript", "Node.js", "PostgreSQL"],
-      "year": 2024,
+      "title": "Observatories",
+      "description": "Multi-observatory open data platform for visualizing and analyzing production, consumption, prices, trade, and other agricultural indicators through charts, maps, and interactive dashboards",
+      "image": "/images/Observatorios.png",
+      "tech": ["Next.js", "TypeScript", "Node.js", "MySQL", "PHP", "Python"],
+      "year": 2026,
       "featured": true,
-      "url": "https://example.com/analytics"
+      "url": "https://cropobservatoriesalliance.org"
     },
     {
       "id": "2",
-      "title": "Design System",
-      "description": "Comprehensive component library with 100+ components",
-      "image": "/images/project-2.svg",
-      "tech": ["React", "TypeScript", "Storybook"],
-      "year": 2024,
+      "title": "Rasptool",
+      "description": "Interactive web platform for agroclimatic analysis to visualize future crop suitability and support agricultural planning and climate change adaptation decisions",
+      "image": "/images/Rasptool.png",
+      "tech": ["Next.js", "TypeScript", "Node.js", "MySQL", "Python", "FastAPI"],
+      "year": 2025,
       "featured": true,
-      "url": "https://example.com/analytics"
+      "url": "https://rasptool.com/interactive-tool"
     },
     {
       "id": "3",
-      "title": "Wellness App API",
-      "description": "Node.js backend for meditation and wellness tracking",
-      "image": "/images/project-3.svg",
-      "tech": ["Node.js", "MongoDB", "Redis"],
-      "year": 2023,
-      "featured": false,
-      "url": "https://example.com/wellness"
+      "title": "Sustainable Agri-Food Colombia",
+      "description": "Monitoring, evaluation, and real-time indicator visualization platform for sustainable agri-food projects",
+      "image": "/images/Melia.png",
+      "tech": ["Next.js", "TypeScript", "Node.js", "MySQL", "Python", "AWS"],
+      "year": 2024,
+      "featured": true,
+      "url": "https://melia.agroalimentariasostenible.co"
     },
     {
       "id": "4",
-      "title": "Carbon Calculator",
-      "description": "Interactive tool for measuring carbon emissions",
-      "image": "/images/project-4.svg",
-      "tech": ["React", "Python", "FastAPI"],
-      "year": 2023,
+      "title": "HackathonIA-Coo-front",
+      "description": "Modern e-commerce web application developed for the Coomeva Hackathon, featuring authentication, shopping cart, payment processing, and order management",
+      "image": "/images/HackatonIa.png",
+      "tech": ["Next.js 16.1.6", "React 19.2.3", "TypeScript 5.0", "Tailwind CSS 4.0"],
+      "year": 2025,
       "featured": true,
-      "url": "https://example.com/analytics"
+      "url": "https://github.com/jodavelo/HackathonIA-Coo-front"
     }
   ]
 }

@@ -14,10 +14,8 @@
     "cta": "View my work"
   },
   "about": {
-    "title": "About Me",
-    "bio": "I'm a full stack engineer with 6+ years of experience building scalable solutions. I'm passionate about the intersection of technology and human-centered design.",
-    "expertise": "My specialty",
-    "interests": "Interests"
+  "title": "About Me",
+  "bio": "I'm a Full Stack Developer with experience building web applications, backend services, and internal tools. My work includes developing data processing and visualization platforms, automating information workflows, modernizing legacy systems, and setting up CI/CD pipelines for reliable cloud deployments."
   },
   "projects": {
     "title": "Projects",
@@ -33,6 +31,14 @@
   "experience": {
     "title": "Experience",
     "current": "Current"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools",
+    "cloud": "Cloud & DevOps",
+    "design": "Design"
   },
   "contact": {
     "title": "Contact",

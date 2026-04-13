@@ -30,11 +30,16 @@ const t = currentLang === 'en' ? enTranslations : esTranslations;
 // Import data (safe because getStaticPaths already verified they exist)
 const profileDataImport = await import('../../../data/profile.json');
 const experienceDataImport = await import('../../../data/experience.json');
+const skillsDataImport = await import('../../../data/skills.json');
 const profile = profileDataImport.default || profileDataImport;
 const experience = experienceDataImport.default || experienceDataImport;
+const skills = skillsDataImport.default || skillsDataImport;
 
 const profileData = profile[currentLang];
 const experienceData = experience[currentLang];
+
+// Define skill categories to display
+const skillCategories = ['frontend', 'backend', 'tools', 'cloud'] as const;
 ---
 
 <Layout title={`${t.about.title} - ${profileData.name}`} description={t.about.bio} lang={currentLang}>
@@ -42,10 +47,23 @@ const experienceData = experience[currentLang];
     <Section id="about" title={t.about.title}>
     <div class="max-w-none text-gray-700 dark:text-gray-400 mb-6 sm:mb-12">
       <p class="mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">{t.about.bio}</p>
-      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.expertise}</h3>
-      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 mb-4 sm:mb-6 leading-relaxed">React, TypeScript, Node.js, Python, PostgreSQL, MongoDB, AWS, Docker</p>
-      <h3 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 dark:text-white mt-4 sm:mt-6 mb-2 sm:mb-3">{t.about.interests}</h3>
-      <p class="text-xs sm:text-sm lg:text-base text-gray-700 dark:text-gray-400 leading-relaxed">Scalable architecture, open source, clean code, user experience</p>
+    </div>
+
+    <!-- Skills Section -->
+    <h3 class="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 mt-8 sm:mt-12">{t.skills?.title}</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+      {skillCategories.map((category) => (
+        <div>
+          <h4 class="text-xs sm:text-sm lg:text-base font-semibold text-gray-900 dark:text-white mb-3">{t.skills?.[category]}</h4>
+          <div class="flex flex-wrap gap-2">
+            {skills[category].map((skill) => (
+              <span class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs lg:text-sm px-3 py-1.5 rounded-full">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
 
     <!-- Experience Section -->

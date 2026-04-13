@@ -13,12 +13,10 @@
     "tagline": "Construyo experiencias digitales elegantes con tecnología moderna",
     "cta": "Ver mis trabajos"
   },
-  "about": {
-    "title": "Sobre mí",
-    "bio": "Soy un ingeniero full stack con 6+ años de experiencia construyendo soluciones escalables. Me apasiona la intersección entre tecnología y diseño centrado en el usuario.",
-    "expertise": "Mi especialidad",
-    "interests": "Intereses"
-  },
+"about": {
+  "title": "Sobre mí",
+  "bio": "Soy un desarrollador Full Stack con experiencia en la creación de aplicaciones web, servicios backend y herramientas internas. Mi trabajo incluye el desarrollo de plataformas para procesamiento y visualización de datos, la automatización de flujos de información, la modernización de sistemas heredados y la implementación de pipelines de CI/CD para despliegues confiables en la nube."
+},
   "projects": {
     "title": "Proyectos",
     "subtitle": "Una selección de mis trabajos recientes",
@@ -33,6 +31,14 @@
   "experience": {
     "title": "Experiencia",
     "current": "Actual"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Herramientas",
+    "cloud": "Cloud & DevOps",
+    "design": "Design"
   },
   "contact": {
     "title": "Contacto",

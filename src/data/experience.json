@@ -2,41 +2,77 @@
   "es": [
     {
       "id": "1",
-      "company": "TechCorp",
-      "role": "Ingeniero Senior Full Stack",
-      "startDate": "2022-06",
+      "company": "Centro Internacional de Agricultura Tropical (CIAT)",
+      "role": "Desarrollador Full Stack",
+      "startDate": "2024-06",
       "endDate": null,
       "current": true,
-      "summary": "Liderando la arquitectura y desarrollo de productos SaaS escalables"
+      "summary": "Desarrollo de herramientas internas con Next.js y FastAPI para el procesamiento y la visualización de datos, automatización de flujos de información desde Formshare, migración de backends heredados de PHP a FastAPI e implementación de CI/CD con GitHub Actions y Azure DevOps para despliegues automatizados en Azure."
     },
     {
       "id": "2",
-      "company": "StartupHub",
-      "role": "Desarrollador Full Stack",
-      "startDate": "2020-03",
-      "endDate": "2022-05",
+      "company": "Universidad Icesi",
+      "role": "Monitor - Proyecto Integrador 2",
+      "startDate": "2024-02",
+      "endDate": "2024-12",
       "current": false,
-      "summary": "Construí aplicaciones full-stack para múltiples empresas en etapa inicial"
+      "summary": "Apoyé el desarrollo de proyectos de ingeniería de software, brindando asesoría a estudiantes en implementación, depuración y adopción de buenas prácticas de desarrollo."
+    },
+    {
+      "id": "3",
+      "company": "Banco W",
+      "role": "Desarrollador Backend",
+      "startDate": "2023-06",
+      "endDate": "2023-07",
+      "current": false,
+      "summary": "Apoyé el desarrollo del proyecto CDT Digital, contribuyendo a la construcción y evolución de componentes backend."
+    },
+    {
+      "id": "4",
+      "company": "Transmilenio Organización Multisectorial",
+      "role": "Gerente General",
+      "startDate": "2019-10",
+      "endDate": "2021-12",
+      "current": false,
+      "summary": "Implementé rutas y horarios estratégicos que redujeron los tiempos de carga y descarga en un 20%, y desarrollé un sistema de seguimiento en tiempo real que disminuyó los tiempos de espera en un 25%."
     }
   ],
   "en": [
     {
       "id": "1",
-      "company": "TechCorp",
-      "role": "Senior Full Stack Engineer",
-      "startDate": "2022-06",
+      "company": "International Center for Tropical Agriculture (CIAT)",
+      "role": "Full Stack Developer",
+      "startDate": "2024-06",
       "endDate": null,
       "current": true,
-      "summary": "Leading architecture and development of scalable SaaS products"
+      "summary": "Developing internal tools with Next.js and FastAPI for data processing and visualization, automating information workflows from Formshare, migrating legacy backends from PHP to FastAPI, and implementing CI/CD with GitHub Actions and Azure DevOps for automated deployments on Azure."
     },
     {
       "id": "2",
-      "company": "StartupHub",
-      "role": "Full Stack Developer",
-      "startDate": "2020-03",
-      "endDate": "2022-05",
+      "company": "Icesi University",
+      "role": "Teaching Assistant - Integrative Project 2",
+      "startDate": "2024-02",
+      "endDate": "2024-12",
       "current": false,
-      "summary": "Built full-stack applications for multiple early-stage companies"
+      "summary": "Supported software engineering projects by mentoring students on implementation, debugging, and development best practices."
+    },
+    {
+      "id": "3",
+      "company": "Banco W",
+      "role": "Backend Developer",
+      "startDate": "2023-06",
+      "endDate": "2023-07",
+      "current": false,
+      "summary": "Contributed to the development of the CDT Digital project, supporting the implementation and evolution of backend components."
+    },
+    {
+      "id": "4",
+      "company": "Transmilenio Multisector Organization",
+      "role": "General Manager",
+      "startDate": "2019-10",
+      "endDate": "2021-12",
+      "current": false,
+      "summary": "Implemented strategic routes and schedules that reduced loading and unloading times by 20%, and developed a real-time tracking system that reduced waiting times by 25%."
     }
   ]
 }

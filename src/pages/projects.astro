@@ -1,13 +1,24 @@
 
-// Redirect to Spanish version
-return Astro.redirect('/es/projects/');
+---
+import Layout from '../layouts/Layout.astro';
+import BottomNav from '../components/BottomNav.astro';
+import Section from '../components/Section.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
+import esTranslations from '../data/i18n/es.json';
+import enTranslations from '../data/i18n/en.json';
+import projectsData from '../data/projects.json';
+
+// Redirect to Spanish version
+const currentLang = 'es';
+const t = esTranslations;
+---
 
 <Layout title={`${t.projects.title}`} description={t.projects.subtitle}>
   <div class="max-h-[calc(100vh-80px)] overflow-y-auto">
     <Section id="projects" title={t.projects.title} subtitle={t.projects.subtitle}>
     <div>
-      {projectsData.map((project) => (
+      {projectsData.es.map((project) => (
         <ProjectCard
           title={project.title}
           description={project.description}

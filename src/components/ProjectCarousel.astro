@@ -198,10 +198,13 @@ const t = translations[lang];
     }
 
     .project-slider__card {
-      aspect-ratio: 16 / 5;
+      aspect-ratio: auto;
       border-radius: 0.75rem;
       box-shadow: none;
       border: 2px solid #e5e7eb;
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
     }
 
     html.dark .project-slider__card {
@@ -210,10 +213,18 @@ const t = translations[lang];
 
     .project-slider__overlay {
       padding: 0.5rem;
+      padding-top: 0.5rem;
+      position: relative;
+    }
+
+    .project-slider__image {
+      max-height: 60%;
+      flex-shrink: 0;
     }
 
     .project-slider__title {
       font-size: 0.85rem;
+      display: none;
     }
 
     .project-slider__description {

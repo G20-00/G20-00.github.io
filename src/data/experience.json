@@ -7,7 +7,7 @@
       "startDate": "2024-06",
       "endDate": null,
       "current": true,
-      "summary": "Desarrollo de herramientas internas con Next.js y FastAPI para el procesamiento y la visualización de datos, automatización de flujos de información desde Formshare, migración de backends heredados de PHP a FastAPI e implementación de CI/CD con GitHub Actions y Azure DevOps para despliegues automatizados en Azure."
+      "summary": "Desarrollo herramientas internas con Next.js y FastAPI para el procesamiento y visualización de datos, automatizo flujos de información desde Formshare, migro backends heredados de PHP a FastAPI e implemento CI/CD con GitHub Actions y Azure DevOps para despliegues automatizados en Azure."
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "startDate": "2024-02",
       "endDate": "2024-12",
       "current": false,
-      "summary": "Apoyé el desarrollo de proyectos de ingeniería de software, brindando asesoría a estudiantes en implementación, depuración y adopción de buenas prácticas de desarrollo."
+      "summary": "Apoyé el desarrollo de proyectos de ingeniería de software, asesoré a estudiantes en implementación y depuración, y promoví buenas prácticas de desarrollo."
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "startDate": "2023-06",
       "endDate": "2023-07",
       "current": false,
-      "summary": "Apoyé el desarrollo del proyecto CDT Digital, contribuyendo a la construcción y evolución de componentes backend."
+      "summary": "Apoyé el desarrollo del proyecto CDT Digital y contribuí a la construcción y evolución de componentes backend."
     },
     {
       "id": "4",
@@ -45,7 +45,7 @@
       "startDate": "2024-06",
       "endDate": null,
       "current": true,
-      "summary": "Developing internal tools with Next.js and FastAPI for data processing and visualization, automating information workflows from Formshare, migrating legacy backends from PHP to FastAPI, and implementing CI/CD with GitHub Actions and Azure DevOps for automated deployments on Azure."
+      "summary": "I develop internal tools with Next.js and FastAPI for data processing and visualization, automate information workflows from Formshare, migrate legacy backends from PHP to FastAPI, and implement CI/CD with GitHub Actions and Azure DevOps for automated deployments on Azure."
     },
     {
       "id": "2",
@@ -54,7 +54,7 @@
       "startDate": "2024-02",
       "endDate": "2024-12",
       "current": false,
-      "summary": "Supported software engineering projects by mentoring students on implementation, debugging, and development best practices."
+      "summary": "I supported software engineering projects, mentored students on implementation and debugging, and promoted development best practices."
     },
     {
       "id": "3",
@@ -63,7 +63,7 @@
       "startDate": "2023-06",
       "endDate": "2023-07",
       "current": false,
-      "summary": "Contributed to the development of the CDT Digital project, supporting the implementation and evolution of backend components."
+      "summary": "I supported the development of the CDT Digital project and contributed to the implementation and evolution of backend components."
     },
     {
       "id": "4",
@@ -72,7 +72,7 @@
       "startDate": "2019-10",
       "endDate": "2021-12",
       "current": false,
-      "summary": "Implemented strategic routes and schedules that reduced loading and unloading times by 20%, and developed a real-time tracking system that reduced waiting times by 25%."
+      "summary": "I implemented strategic routes and schedules that reduced loading and unloading times by 20%, and I developed a real-time tracking system that reduced waiting times by 25%."
     }
   ]
 }

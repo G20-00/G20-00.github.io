@@ -120,9 +120,12 @@ const t = translations[lang];
     .project-slider__card {
       aspect-ratio: 1 / 1;
       border-radius: 1.5rem;
-      box-shadow:
-        0 8px 16px rgba(0, 0, 0, 0.16),
-        0 2px 4px rgba(0, 0, 0, 0.08);
+      box-shadow: none;
+      border: 2px solid #e5e7eb;
+    }
+
+    html.dark .project-slider__card {
+      border: 2px solid #374151;
     }
   }
 
@@ -163,10 +166,13 @@ const t = translations[lang];
     border-radius: 1.5rem;
     overflow: hidden;
     text-decoration: none;
-    background: #111827;
-    box-shadow:
-      0 8px 16px rgba(0, 0, 0, 0.16),
-      0 2px 4px rgba(0, 0, 0, 0.08);
+    background: transparent;
+    box-shadow: none;
+    border: 2px solid #e5e7eb;
+  }
+
+  html.dark .project-slider__card {
+    border: 2px solid #374151;
   }
 
   /* Mobile - Horizontal line style */
@@ -194,9 +200,12 @@ const t = translations[lang];
     .project-slider__card {
       aspect-ratio: 16 / 5;
       border-radius: 0.75rem;
-      box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.12),
-        0 1px 2px rgba(0, 0, 0, 0.04);
+      box-shadow: none;
+      border: 2px solid #e5e7eb;
+    }
+
+    html.dark .project-slider__card {
+      border: 2px solid #374151;
     }
 
     .project-slider__overlay {
@@ -232,7 +241,8 @@ const t = translations[lang];
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   .project-slider__overlay {
@@ -240,32 +250,41 @@ const t = translations[lang];
     inset: 0;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     padding: 0.75rem;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.02) 0%,
-      rgba(0, 0, 0, 0.12) 45%,
-      rgba(0, 0, 0, 0.58) 100%
-    );
+    background: transparent;
   }
 
   .project-slider__content {
-    color: #fff;
+    background: transparent;
+    color: #000000;
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  html.dark .project-slider__content {
+    background: transparent;
+    color: #ffffff;
   }
 
   .project-slider__title {
     margin: 0;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.02em;
+    color: inherit;
   }
 
   .project-slider__description {
     margin: 0.25rem 0 0;
     font-size: 0.75rem;
     line-height: 1.3;
-    color: rgba(255, 255, 255, 0.9);
+    color: inherit;
+    opacity: 0.95;
+    display: none;
   }
 
   .project-slider__dots {

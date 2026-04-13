@@ -2,33 +2,35 @@
   "es": [
     {
       "id": "1",
-      "title": "Panel de Análisis",
-      "description": "Plataforma de visualización de datos en tiempo real para análisis SaaS",
-      "image": "/images/project-1.svg",
-      "tech": ["React", "TypeScript", "Node.js", "PostgreSQL"],
-      "year": 2024,
+      "title": "Observatorios",
+      "description": "Plataforma multiobservatorio de datos abiertos para visualizar y analizar producción, consumo, precios, comercio y otros indicadores agrícolas mediante gráficos, mapas y dashboards interactivos",
+      "image": "/images/Observatorios.png",
+      "tech": ["Next.js", "TypeScript", "Node.js", "Mysql","PHP","Python"],
+      "year": 2026,
       "featured": true,
-      "url": "https://example.com/analytics"
+      "url": "https://cropobservatoriesalliance.org"
     },
     {
       "id": "2",
-      "title": "Sistema de Diseño",
-      "description": "Biblioteca de componentes integral con más de 100 componentes",
-      "image": "/images/project-2.svg",
-      "tech": ["React", "TypeScript", "Storybook"],
-      "year": 2024,
+      "title": "Rasptool",
+      "description": "Plataforma web interactiva de análisis agroclimático para visualizar la aptitud futura de cultivos y apoyar decisiones de planificación agrícola y adaptación al cambio climático",
+      "image": "/images/Rasptool.png",
+      "tech": ["Next.js", "TypeScript", "Node.js","Mysql","Python","FastAPI"],
+      "year": 2025,
       "featured": true,
-      "url": "https://example.com/analytics"
-    },
+      "url": "https://rasptool.com/interactive-tool"
+    
+      },
     {
       "id": "3",
-      "title": "API de Aplicación de Bienestar",
-      "description": "Backend Node.js para seguimiento de meditación y bienestar",
-      "image": "/images/project-3.svg",
-      "tech": ["Node.js", "MongoDB", "Redis"],
-      "year": 2023,
-      "featured": false,
-      "url": "https://example.com/wellness"
+      "title": "Colombia agroalimentaria sostenible",
+      "description": "Plataforma de monitoreo, evaluación y visualización de indicadores en tiempo real para proyectos agroalimentarios sostenibles",
+      "image": "/images/Melia.png",
+      "tech": ["Next.js", "TypeScript", "Node.js","Mysql","Python","Aws"],
+      "year": 2024,
+      "featured": true,
+      "url": "https://melia.agroalimentariasostenible.co"
+    
     },
     {
       "id": "4",
